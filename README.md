@@ -12,9 +12,9 @@ Aplicación API HTTP con Node.js ejecutándose en AWS Lambda y API Gateway utili
 * Desarrollador: José Gabriel Ponte Sagastegui
 
 ### explanation
-* Invoke the endpoint to start registering favorites:
+* Invoke the endpoint to start registering personajes:
 ```
-  POST - https://waanrj5x37.execute-api.sa-east-1.amazonaws.com/favorites
+  POST - https://ppkr26shi0.execute-api.sa-east-1.amazonaws.com/personaje
 ```
 
 * Use the following scheme
@@ -92,7 +92,7 @@ URL=https://xxxxxxx.execute-api.sa-east-1.amazonaws.com/
 You can invoke your function locally by using the following command:
 
 ```bash
-serverless invoke local --function getFavorites
+serverless invoke local --function createPersonaje
 ```
 
 Which should result in response similar to the following:
