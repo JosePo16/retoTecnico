@@ -1,0 +1,26 @@
+service: reto-node-aws
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: sa-east-1
+  environment:
+    PERSONAJE_TABLE: ${self:custom.personajeTable}
+    URL_BASE_SWAPI: https://swapi.py4e.com/api
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: 
+        - arn:aws:dynamodb:sa-east-1:*:table/${self.custom.personajeTable}
+
+custom: 
+  personajeTable: Personajes
+
+functions: ${file(app/yml/functions.yml)}
+
+resources: ${file(app/yml/dynamodb.yml)}
+
+plugins:
+  - serverless-offline

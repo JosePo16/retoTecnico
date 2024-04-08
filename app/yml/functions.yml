@@ -1,0 +1,50 @@
+createPersonaje:
+  handler: app/functions/personajes/createPersonaje.addPersonaje
+  events:
+    - httpApi:
+        path: /personaje
+        method: post
+
+getPersonajes:
+  handler: app/functions/personajes/getPersonajes.getPersonajes
+  events:
+    - httpApi:
+        path: /personajes/all
+        method: get
+
+getPersonaje:
+  handler: app/functions/personajes/getPersonajeById.getPersonajeById
+  events:
+    - httpApi:
+        path: /personaje/{id}
+        method: get
+
+updatePersonaje:
+  handler: app/functions/personajes/updatePersonaje.updatePersonaje
+  events:
+    - httpApi:
+        path: /personaje/{id}
+        method: put
+
+
+
+getSwapiFilms:
+  handler: app/functions/swapi/getFilms.getFilms
+  events:
+    - httpApi:
+        path: /swapi/films
+        method: get
+
+getSwapiPeople:
+  handler: app/functions/swapi/getPeople.getPeople
+  events:
+    - httpApi:
+        path: /swapi/people
+        method: get
+
+getSwapiStarships:
+  handler: app/functions/swapi/getStarships.getStarships
+  events:
+    - httpApi:
+        path: /swapi/startship
+        method: get
